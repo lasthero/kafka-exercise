@@ -42,10 +42,11 @@ public class TwitterKafkaProducer {
     //private BlockingQueue<Event> eventQueue;
     private KafkaProducer<String, String> producer;
     private Client hosebirdClient;
-    private final String consumerKey = "LRQT1APaH5rA8OPW4kykh9v1A";
-    private final String consumerSecret = "BjzS6h215CknEQANxoC04FKltnX12Jsxkc6Nj3IIttBg4akqgH";
-    private final String token="39305555-UVEmFe4FR1RGwYSsymA7CF4r7ONFPzfiBTlRtFRMt";
-    private final String tokenSecret="1Q9XW4kqqEULzGqmyX6Qz5A2aqN61poYTjmGfSfyCHUmc";
+    //modify these setting before run
+    private final String consumerKey = "key";
+    private final String consumerSecret = "secret";
+    private final String token="token";
+    private final String tokenSecret="secret";
 
     public TwitterClientRunnable() throws InterruptedException {
       /** Set up your blocking queues: Be sure to size these properly based on expected TPS of your stream */
