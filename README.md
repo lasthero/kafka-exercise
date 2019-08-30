@@ -23,14 +23,17 @@ This repo is my exercise on Kafka by following Stephane Maarek's Udemy course. T
 - Useful Kafka CLI commands on Docker:
   - Create topics:
 ``docker exec -it kafka_exercise_kafka_1 /usr/bin/kafka-topics --bootstrap-server 127.0.0.1:9092 --topic important_tweets --create --partitions 3 --replication-factor 1``
-
+  - List all topics: 
+  `docker exec -it kafka_exercise_kafka_1 /usr/bin/kafka-topics --bootstrap-server 127.0.0.1:9092 --list`
+  - Describe a topic:
+  `docker exec -it kafka_exercise_kafka_1 /usr/bin/kafka-topics --bootstrap-server 127.0.0.1:9092 --topic first_topic --describe`
   - Start a consumer:
 `docker exec -it kafka_exercise_kafka_1 /usr/bin/kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --group first_group --key-deserializer org.apache.kafka.common.serialization.StringDeserializer --value-deserializer org.apache.kafka.common.serialization.StringDeserializer --property print.key=true --property key.separator="-"`
 
   - Describe consumer groups:
 ``docker exec -it kafka_exercise_kafka_1 /usr/bin/kafka-consumer-groups --bootstrap-server 127.0.0.1:9092 --group kafka-demo-elasticsearch --describe``
 
- - Reset consumer group offsets:
+  - Reset consumer group offsets:
 ``docker exec -it kafka_exercise_kafka_1 /usr/bin/kafka-consumer-groups --bootstrap-server 127.0.0.1:9092 --group kafka-demo-elasticsearch --reset-offsets --execute --to-earliest --topic twitter-tweets``
 
   - Start a producer:
